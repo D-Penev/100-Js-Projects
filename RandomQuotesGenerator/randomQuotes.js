@@ -1,0 +1,5 @@
+function randomQuotes() {
+
+}
+
+randomQuotes();
