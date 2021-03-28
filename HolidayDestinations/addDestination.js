@@ -1,5 +1,0 @@
-function addDestination() {
-    
-}
-
-addDestination();
