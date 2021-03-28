@@ -4,7 +4,6 @@ function randomQuotes() {
    let generateQuoteButton = document.getElementById('generateQuoteButton');
    if (quoteBodyDiv !== null & quoteAuthorDiv !== null) {
       generateQuoteButton.addEventListener('click', (evt) => {
-         debugger;
          let currQuote = getRandomQuote();
          quoteBodyDiv.innerText = currQuote.text;
          quoteAuthorDiv.innerText = currQuote.author;
@@ -19,7 +18,6 @@ function getRandomQuote() {
      .then(function(response) {
          return response.json();
      }).then(function (data) {
-          
         let randomIndex = Math.floor(Math.random() * data.length);
         let currQuoteObj = data[randomIndex];
         quote.text = currQuoteObj.text;
