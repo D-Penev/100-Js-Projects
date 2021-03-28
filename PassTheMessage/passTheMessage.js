@@ -5,8 +5,7 @@ function passTheMessage() {
    if (messageFromInput !== null && submitButton !== null && messageContainer !== null) {
        submitButton.addEventListener('click', (evt) => {
           let messageText = messageFromInput.value;
-          messageContainer.append(`${messageText}`);
-          messageContainer.append('\n');
+          messageContainer.append(messageText);
       });
    }
 }
