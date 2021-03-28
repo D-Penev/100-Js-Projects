@@ -1,5 +1,5 @@
-function holidayDestinations() {
+function addDestination() {
     
 }
 
-holidayDestinations();
+addDestination();
