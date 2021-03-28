@@ -9,12 +9,13 @@ function randomQuotes() {
         let randomIndex = Math.floor(Math.random() * data.length);
         let currQuoteObj = data[randomIndex];
         let parsedJson = JSON.parse(currQuoteObj);
-        
+        quotesStorage.push(parsedJson);
      });
-   let quoteBody = document.getElementById('currQuote');
-   let quoteAuthor = document.getElementById('currQuoteAuthor');
-
-   if (quoteBody !== null & quoteAuthor !== null) {
+     debugger;
+   let quoteBodyDiv = document.getElementById('currQuote');
+   let quoteAuthorDiv = document.getElementById('currQuoteAuthor');
+   let generateQuoteButton = document.getElementById('generateQuoteButton');
+   if (quoteBodyDiv !== null & quoteAuthorDiv !== null) {
      
    }
    
