@@ -4,26 +4,24 @@ function randomQuotes() {
    let generateQuoteButton = document.getElementById('generateQuoteButton');
    if (quoteBodyDiv !== null & quoteAuthorDiv !== null) {
       generateQuoteButton.addEventListener('click', (evt) => {
-         let currQuote = getRandomQuote();
-         quoteBodyDiv.innerText = currQuote.text;
-         quoteAuthorDiv.innerText = currQuote.author;
+          getRandomQuote().then((result) => {
+            let randomIndex = Math.floor(Math.random() * result.length);
+            let currQuote = result[randomIndex];
+            quoteBodyDiv.innerText = currQuote.text;
+            quoteAuthorDiv.innerText = currQuote.author;
+          });
       });
    }
    
 }
 
 function getRandomQuote() {
-    let quote = {};
-    fetch('https://type.fit/api/quotes')
+   return fetch('https://type.fit/api/quotes')
      .then(function(response) {
          return response.json();
-     }).then(function (data) {
-        let randomIndex = Math.floor(Math.random() * data.length);
-        let currQuoteObj = data[randomIndex];
-        quote.text = currQuoteObj.text;
-        quote.author = currQuoteObj.author;
+     }).then(function (json) {
+        return json;
      });
-     return quote;
 }
 
 randomQuotes();
